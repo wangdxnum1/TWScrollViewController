@@ -15,6 +15,7 @@
 		EBA264CC1CDC9D7D00B4478B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EBA264CA1CDC9D7D00B4478B /* LaunchScreen.storyboard */; };
 		EBA264D71CDC9D7D00B4478B /* TWScrollViewControllerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = EBA264D61CDC9D7D00B4478B /* TWScrollViewControllerTests.m */; };
 		EBA264E21CDC9D7D00B4478B /* TWScrollViewControllerUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = EBA264E11CDC9D7D00B4478B /* TWScrollViewControllerUITests.m */; };
+		EBA264F21CDC9E5500B4478B /* TWSegmentStyle.m in Sources */ = {isa = PBXBuildFile; fileRef = EBA264F11CDC9E5500B4478B /* TWSegmentStyle.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +52,8 @@
 		EBA264DD1CDC9D7D00B4478B /* TWScrollViewControllerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TWScrollViewControllerUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		EBA264E11CDC9D7D00B4478B /* TWScrollViewControllerUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TWScrollViewControllerUITests.m; sourceTree = "<group>"; };
 		EBA264E31CDC9D7D00B4478B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EBA264F01CDC9E5500B4478B /* TWSegmentStyle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TWSegmentStyle.h; sourceTree = "<group>"; };
+		EBA264F11CDC9E5500B4478B /* TWSegmentStyle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TWSegmentStyle.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,6 +104,7 @@
 		EBA264BB1CDC9D7D00B4478B /* TWScrollViewController */ = {
 			isa = PBXGroup;
 			children = (
+				EBA264EF1CDC9E1300B4478B /* TWScrollViewController */,
 				EBA264BF1CDC9D7D00B4478B /* AppDelegate.h */,
 				EBA264C01CDC9D7D00B4478B /* AppDelegate.m */,
 				EBA264C21CDC9D7D00B4478B /* ViewController.h */,
@@ -138,6 +142,15 @@
 				EBA264E31CDC9D7D00B4478B /* Info.plist */,
 			);
 			path = TWScrollViewControllerUITests;
+			sourceTree = "<group>";
+		};
+		EBA264EF1CDC9E1300B4478B /* TWScrollViewController */ = {
+			isa = PBXGroup;
+			children = (
+				EBA264F01CDC9E5500B4478B /* TWSegmentStyle.h */,
+				EBA264F11CDC9E5500B4478B /* TWSegmentStyle.m */,
+			);
+			path = TWScrollViewController;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -272,6 +285,7 @@
 			files = (
 				EBA264C41CDC9D7D00B4478B /* ViewController.m in Sources */,
 				EBA264C11CDC9D7D00B4478B /* AppDelegate.m in Sources */,
+				EBA264F21CDC9E5500B4478B /* TWSegmentStyle.m in Sources */,
 				EBA264BE1CDC9D7D00B4478B /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
