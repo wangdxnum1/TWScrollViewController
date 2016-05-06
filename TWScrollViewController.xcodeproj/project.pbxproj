@@ -16,6 +16,7 @@
 		EBA264D71CDC9D7D00B4478B /* TWScrollViewControllerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = EBA264D61CDC9D7D00B4478B /* TWScrollViewControllerTests.m */; };
 		EBA264E21CDC9D7D00B4478B /* TWScrollViewControllerUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = EBA264E11CDC9D7D00B4478B /* TWScrollViewControllerUITests.m */; };
 		EBA264F21CDC9E5500B4478B /* TWSegmentStyle.m in Sources */ = {isa = PBXBuildFile; fileRef = EBA264F11CDC9E5500B4478B /* TWSegmentStyle.m */; };
+		EBA264F51CDCA3BA00B4478B /* UIColor+Utility.m in Sources */ = {isa = PBXBuildFile; fileRef = EBA264F41CDCA3BA00B4478B /* UIColor+Utility.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -54,6 +55,8 @@
 		EBA264E31CDC9D7D00B4478B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EBA264F01CDC9E5500B4478B /* TWSegmentStyle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TWSegmentStyle.h; sourceTree = "<group>"; };
 		EBA264F11CDC9E5500B4478B /* TWSegmentStyle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TWSegmentStyle.m; sourceTree = "<group>"; };
+		EBA264F31CDCA3BA00B4478B /* UIColor+Utility.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+Utility.h"; sourceTree = "<group>"; };
+		EBA264F41CDCA3BA00B4478B /* UIColor+Utility.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+Utility.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -147,6 +150,8 @@
 		EBA264EF1CDC9E1300B4478B /* TWScrollViewController */ = {
 			isa = PBXGroup;
 			children = (
+				EBA264F31CDCA3BA00B4478B /* UIColor+Utility.h */,
+				EBA264F41CDCA3BA00B4478B /* UIColor+Utility.m */,
 				EBA264F01CDC9E5500B4478B /* TWSegmentStyle.h */,
 				EBA264F11CDC9E5500B4478B /* TWSegmentStyle.m */,
 			);
@@ -287,6 +292,7 @@
 				EBA264C11CDC9D7D00B4478B /* AppDelegate.m in Sources */,
 				EBA264F21CDC9E5500B4478B /* TWSegmentStyle.m in Sources */,
 				EBA264BE1CDC9D7D00B4478B /* main.m in Sources */,
+				EBA264F51CDCA3BA00B4478B /* UIColor+Utility.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
