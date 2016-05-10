@@ -335,30 +335,41 @@
     }
     
     CGFloat offsetX = self.mainView.contentOffset.x;
-//    CGFloat temp = offsetX / self.mainView.tw_width;
-//    CGFloat progress = temp - floor(temp);
+    CGFloat temp = offsetX / self.mainView.tw_width;
+    CGFloat progress = temp - floor(temp);
     
-    CGFloat progress = fabs(offsetX - self.oldOffSetX) / self.mainView.tw_width;
+    //CGFloat progress = fabs(offsetX - self.oldOffSetX) / self.mainView.tw_width;
     
     //DLog(@"offset x = %@,progress = %@",@(offsetX),@(progress));
-    if(offsetX > self.oldOffSetX){
+    if(offsetX >= self.oldOffSetX){
         // 向右滑动
-        NSInteger maxCount = self.infiniteLoop ? (self.totalItemsCount / 100) : self.totalItemsCount;
-        if(self.oldIndex == maxCount){
+        if (progress == 0.0) {
             return;
         }
+        NSInteger maxCount = self.infiniteLoop ? (self.totalItemsCount / 100) : self.totalItemsCount;
+        if(offsetX < 0 || offsetX > (maxCount - 1) * self.mainView.tw_width){
+            return;
+        }
+        self.oldIndex = offsetX / self.mainView.tw_width;
         self.currentIndex = self.oldIndex + 1;
+        
         if([self.delegate respondsToSelector:@selector(cycleScrollView:didScrollFromIndex:toIndex:progress:)]){
             [self.delegate cycleScrollView:self didScrollFromIndex:self.oldIndex toIndex:self.currentIndex progress:progress];
         }
     }else{
         // 向左滑动
-        if(self.oldIndex == 0){
+        NSInteger maxCount = self.infiniteLoop ? (self.totalItemsCount / 100) : self.totalItemsCount;
+        if(offsetX < 0 || offsetX > (maxCount - 1) * self.mainView.tw_width){
+            return;
+        }
+        self.currentIndex = offsetX / self.mainView.tw_width;
+        self.oldIndex = self.currentIndex + 1;
+        if(self.oldIndex >= maxCount){
             return;
         }
         self.currentIndex = self.oldIndex - 1;
         if([self.delegate respondsToSelector:@selector(cycleScrollView:didScrollFromIndex:toIndex:progress:)]){
-            [self.delegate cycleScrollView:self didScrollFromIndex:self.oldIndex toIndex:self.currentIndex progress:progress];
+            [self.delegate cycleScrollView:self didScrollFromIndex:self.oldIndex toIndex:self.currentIndex progress:1.0 - progress];
         }
     }
 }
@@ -367,23 +378,17 @@
 {
      self.forbidTouchToAdjustPosition = NO;
     self.oldOffSetX = scrollView.contentOffset.x;
-    self.oldIndex = self.oldOffSetX / self.mainView.tw_width;
-    DLog(@"oldIndex = %@",@(self.oldIndex));
 }
 
-- (void)scrollViewDidEndDragging:(UIScrollView *)scrollView willDecelerate:(BOOL)decelerate
-{
-   
-}
-
-- (void)scrollViewDidEndScrollingAnimation:(UIScrollView *)scrollView
-{
-    int itemIndex = (scrollView.contentOffset.x + self.mainView.tw_width * 0.5) / self.mainView.tw_width;
-    if (!self.contentViewsGroup.count) return;
-    int indexOnPageControl = itemIndex % self.contentViewsGroup.count;
-    
-    if ([self.delegate respondsToSelector:@selector(cycleScrollView:didEndScrollToIndex:)]) {
-        [self.delegate cycleScrollView:self didEndScrollToIndex:indexOnPageControl];
+- (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView{
+    CGFloat offsetX = self.mainView.contentOffset.x;
+    NSInteger maxCount = self.infiniteLoop ? (self.totalItemsCount / 100) : self.totalItemsCount;
+    if(offsetX < 0 || offsetX > (maxCount - 1) * self.mainView.tw_width){
+        return;
+    }
+    NSInteger itemIndex = (scrollView.contentOffset.x + self.mainView.tw_width * 0.5) / self.mainView.tw_width;
+    if([self.delegate respondsToSelector:@selector(cycleScrollView:didEndScrollToIndex:)]){
+        [self.delegate cycleScrollView:self didEndScrollToIndex:itemIndex];
     }
 }
 

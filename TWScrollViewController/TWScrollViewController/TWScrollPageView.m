@@ -67,6 +67,11 @@
     [self.segmentView adjustUIWithProgress:progress oldIndex:fromIndex currentIndex:toIndex];
 }
 
+- (void)cycleScrollView:(TWCycleScrollView *)cycleScrollView didEndScrollToIndex:(NSInteger)index{
+    [self.segmentView adjustTitleOffSetToCurrentIndex:index];
+    [self.segmentView adjustUIWithProgress:1.0 oldIndex:index currentIndex:index];
+}
+
 - (void)cycleScrollView:(TWCycleScrollView *)cycleScrollView didSelectItemAtIndex:(NSInteger)index
 {
     NSLog(@"--->>>点击了第%ld个view", (long)index);

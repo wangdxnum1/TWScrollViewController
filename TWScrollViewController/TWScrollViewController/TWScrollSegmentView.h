@@ -32,7 +32,7 @@ typedef void(^ExtraBtnOnClick)(UIButton *extraBtn);
 /** 设置选中的下标*/
 - (void)setSelectedIndex:(NSInteger)index animated:(BOOL)animated;
 
-/** 重新刷新标题的内容*/
-- (void)reloadTitlesWithNewTitles:(NSArray *)titles;
+///** 重新刷新标题的内容*/
+//- (void)reloadTitlesWithNewTitles:(NSArray *)titles;
 
 @end

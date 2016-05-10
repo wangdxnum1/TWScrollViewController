@@ -98,6 +98,8 @@
         return;
     }
     
+    [self adjustTitleOffSetToCurrentIndex:self.currentIndex];
+    
     UIButton *toBtn = [self.titleBtns objectAtIndex:self.currentIndex];
     UIButton *fromBtn = [self.titleBtns objectAtIndex:self.oldIndex];
     
@@ -145,11 +147,42 @@
         }
     }
     
+    // 渐变
+    if (self.segmentStyle.isGradualChangeTitleColor) {
+        UIColor *fromColor = [UIColor colorWithRed:[self.selectedColorRgb[0] floatValue] + [self.deltaRGB[0] floatValue] * progress green:[self.selectedColorRgb[1] floatValue] + [self.deltaRGB[1] floatValue] * progress blue:[self.selectedColorRgb[2] floatValue] + [self.deltaRGB[2] floatValue] * progress alpha:1.0];
+        [fromBtn setTitleColor:fromColor forState:UIControlStateNormal];
+        UIColor *toColor = [UIColor colorWithRed:[self.normalColorRgb[0] floatValue] - [self.deltaRGB[0] floatValue] * progress green:[self.normalColorRgb[1] floatValue] - [self.deltaRGB[1] floatValue] * progress blue:[self.normalColorRgb[2] floatValue] - [self.deltaRGB[2] floatValue] * progress alpha:1.0];
+        [toBtn setTitleColor:toColor forState:UIControlStateNormal];
+    }
+    
     if(self.segmentStyle.isScaleTitle){
         CGFloat dealta = self.segmentStyle.titleBigScale  - 1.0;
         fromBtn.transform = CGAffineTransformMakeScale(self.segmentStyle.titleBigScale - dealta *progress, self.segmentStyle.titleBigScale - dealta *progress);
         toBtn.transform = CGAffineTransformMakeScale(1.0 + dealta *progress, 1.0 + dealta *progress);
     }
+}
+
+- (void)adjustTitleOffSetToCurrentIndex:(NSInteger)currentIndex {
+    UIButton *btn = [self.titleBtns objectAtIndex:currentIndex];
+    
+    CGFloat offsetX = btn.center.x - self.bounds.size.width / 2;
+    if(offsetX < 0){
+        offsetX = 0;
+    }
+    CGFloat maxOffsetX = self.scrollView.contentSize.width - (self.currentWidth - (self.segmentStyle.showExtraButton ? self.extraBtn.tw_width : 0.0));
+    if(offsetX >= maxOffsetX){
+        offsetX = maxOffsetX;
+    }
+    [self.scrollView setContentOffset:CGPointMake(offsetX, 0) animated:YES];
+}
+
+- (void)setSelectedIndex:(NSInteger)index animated:(BOOL)animated {
+    if (index < 0 || index >= self.titles.count) {
+        return;
+    }
+    
+    self.currentIndex = index;
+    [self adjustUIWhenBtnOnClickWithAnimate:animated];
 }
 
 - (void)adjustTitleBtnStatus:(UIButton*)toBtn fromBtn:(UIButton*)fromBtn{
