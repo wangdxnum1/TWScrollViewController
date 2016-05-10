@@ -381,6 +381,7 @@
 }
 
 - (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView{
+    DLog(@"++++++scrollViewDidEndDecelerating");
     CGFloat offsetX = self.mainView.contentOffset.x;
     NSInteger maxCount = self.infiniteLoop ? (self.totalItemsCount / 100) : self.totalItemsCount;
     if(offsetX < 0 || offsetX > (maxCount - 1) * self.mainView.tw_width){
@@ -390,6 +391,23 @@
     if([self.delegate respondsToSelector:@selector(cycleScrollView:didEndScrollToIndex:)]){
         [self.delegate cycleScrollView:self didEndScrollToIndex:itemIndex];
     }
+}
+
+- (void)scrollViewDidEndScrollingAnimation:(UIScrollView *)scrollView{
+    DLog(@"----scrollViewDidEndScrollingAnimation");
+}
+
+- (void)scrollViewDidEndDragging:(UIScrollView *)scrollView willDecelerate:(BOOL)decelerate{
+    DLog(@"!!!!!!scrollViewDidEndDragging");
+//    CGFloat offsetX = self.mainView.contentOffset.x;
+//    NSInteger maxCount = self.infiniteLoop ? (self.totalItemsCount / 100) : self.totalItemsCount;
+//    if(offsetX < 0 || offsetX > (maxCount - 1) * self.mainView.tw_width){
+//        return;
+//    }
+//    NSInteger itemIndex = (scrollView.contentOffset.x + self.mainView.tw_width * 0.5) / self.mainView.tw_width;
+//    if([self.delegate respondsToSelector:@selector(cycleScrollView:didEndScrollToIndex:)]){
+//        [self.delegate cycleScrollView:self didEndScrollToIndex:itemIndex];
+//    }
 }
 
 #pragma makr - dealloc
