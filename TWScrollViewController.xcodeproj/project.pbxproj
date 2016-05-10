@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		EB65A39D1CE1BA9900BAF358 /* TWScrollPageView.m in Sources */ = {isa = PBXBuildFile; fileRef = EB65A39C1CE1BA9900BAF358 /* TWScrollPageView.m */; };
+		EB86BC6E1CE030F20076963A /* TWScrollSegmentView.m in Sources */ = {isa = PBXBuildFile; fileRef = EB86BC6D1CE030F20076963A /* TWScrollSegmentView.m */; };
+		EB86BC711CE08B930076963A /* UIView+TWExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = EB86BC701CE08B930076963A /* UIView+TWExtension.m */; };
+		EB86BC791CE08E3E0076963A /* TWCycleScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = EB86BC731CE08E3E0076963A /* TWCycleScrollView.m */; };
+		EB86BC7A1CE08E3E0076963A /* TWCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = EB86BC751CE08E3E0076963A /* TWCollectionViewCell.m */; };
+		EB86BC7B1CE08E3E0076963A /* UIColor+randomColor.m in Sources */ = {isa = PBXBuildFile; fileRef = EB86BC781CE08E3E0076963A /* UIColor+randomColor.m */; };
 		EBA264BE1CDC9D7D00B4478B /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = EBA264BD1CDC9D7D00B4478B /* main.m */; };
 		EBA264C11CDC9D7D00B4478B /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = EBA264C01CDC9D7D00B4478B /* AppDelegate.m */; };
 		EBA264C41CDC9D7D00B4478B /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EBA264C31CDC9D7D00B4478B /* ViewController.m */; };
@@ -37,6 +43,19 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		EB65A39B1CE1BA9900BAF358 /* TWScrollPageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TWScrollPageView.h; sourceTree = "<group>"; };
+		EB65A39C1CE1BA9900BAF358 /* TWScrollPageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TWScrollPageView.m; sourceTree = "<group>"; };
+		EB65A39E1CE1D36900BAF358 /* DJDConstant.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DJDConstant.h; sourceTree = "<group>"; };
+		EB86BC6C1CE030F20076963A /* TWScrollSegmentView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TWScrollSegmentView.h; sourceTree = "<group>"; };
+		EB86BC6D1CE030F20076963A /* TWScrollSegmentView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TWScrollSegmentView.m; sourceTree = "<group>"; };
+		EB86BC6F1CE08B8B0076963A /* UIView+TWExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+TWExtension.h"; sourceTree = "<group>"; };
+		EB86BC701CE08B930076963A /* UIView+TWExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+TWExtension.m"; sourceTree = "<group>"; };
+		EB86BC731CE08E3E0076963A /* TWCycleScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TWCycleScrollView.m; sourceTree = "<group>"; };
+		EB86BC741CE08E3E0076963A /* TWCycleScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TWCycleScrollView.h; sourceTree = "<group>"; };
+		EB86BC751CE08E3E0076963A /* TWCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TWCollectionViewCell.m; sourceTree = "<group>"; };
+		EB86BC761CE08E3E0076963A /* TWCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TWCollectionViewCell.h; sourceTree = "<group>"; };
+		EB86BC771CE08E3E0076963A /* UIColor+randomColor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+randomColor.h"; sourceTree = "<group>"; };
+		EB86BC781CE08E3E0076963A /* UIColor+randomColor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+randomColor.m"; sourceTree = "<group>"; };
 		EBA264B91CDC9D7D00B4478B /* TWScrollViewController.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TWScrollViewController.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EBA264BD1CDC9D7D00B4478B /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		EBA264BF1CDC9D7D00B4478B /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -84,6 +103,20 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		EB86BC721CE08BAE0076963A /* Categories */ = {
+			isa = PBXGroup;
+			children = (
+				EB65A39E1CE1D36900BAF358 /* DJDConstant.h */,
+				EB86BC771CE08E3E0076963A /* UIColor+randomColor.h */,
+				EB86BC781CE08E3E0076963A /* UIColor+randomColor.m */,
+				EB86BC6F1CE08B8B0076963A /* UIView+TWExtension.h */,
+				EB86BC701CE08B930076963A /* UIView+TWExtension.m */,
+				EBA264F31CDCA3BA00B4478B /* UIColor+Utility.h */,
+				EBA264F41CDCA3BA00B4478B /* UIColor+Utility.m */,
+			);
+			name = Categories;
+			sourceTree = "<group>";
+		};
 		EBA264B01CDC9D7D00B4478B = {
 			isa = PBXGroup;
 			children = (
@@ -150,10 +183,17 @@
 		EBA264EF1CDC9E1300B4478B /* TWScrollViewController */ = {
 			isa = PBXGroup;
 			children = (
-				EBA264F31CDCA3BA00B4478B /* UIColor+Utility.h */,
-				EBA264F41CDCA3BA00B4478B /* UIColor+Utility.m */,
+				EB86BC721CE08BAE0076963A /* Categories */,
+				EB65A39B1CE1BA9900BAF358 /* TWScrollPageView.h */,
+				EB65A39C1CE1BA9900BAF358 /* TWScrollPageView.m */,
+				EB86BC6C1CE030F20076963A /* TWScrollSegmentView.h */,
+				EB86BC6D1CE030F20076963A /* TWScrollSegmentView.m */,
+				EB86BC741CE08E3E0076963A /* TWCycleScrollView.h */,
+				EB86BC731CE08E3E0076963A /* TWCycleScrollView.m */,
 				EBA264F01CDC9E5500B4478B /* TWSegmentStyle.h */,
 				EBA264F11CDC9E5500B4478B /* TWSegmentStyle.m */,
+				EB86BC751CE08E3E0076963A /* TWCollectionViewCell.m */,
+				EB86BC761CE08E3E0076963A /* TWCollectionViewCell.h */,
 			);
 			path = TWScrollViewController;
 			sourceTree = "<group>";
@@ -288,11 +328,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EB86BC711CE08B930076963A /* UIView+TWExtension.m in Sources */,
 				EBA264C41CDC9D7D00B4478B /* ViewController.m in Sources */,
 				EBA264C11CDC9D7D00B4478B /* AppDelegate.m in Sources */,
+				EB86BC791CE08E3E0076963A /* TWCycleScrollView.m in Sources */,
+				EB65A39D1CE1BA9900BAF358 /* TWScrollPageView.m in Sources */,
 				EBA264F21CDC9E5500B4478B /* TWSegmentStyle.m in Sources */,
 				EBA264BE1CDC9D7D00B4478B /* main.m in Sources */,
+				EB86BC6E1CE030F20076963A /* TWScrollSegmentView.m in Sources */,
 				EBA264F51CDCA3BA00B4478B /* UIColor+Utility.m in Sources */,
+				EB86BC7B1CE08E3E0076963A /* UIColor+randomColor.m in Sources */,
+				EB86BC7A1CE08E3E0076963A /* TWCollectionViewCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -516,6 +562,7 @@
 				EBA264E81CDC9D7D00B4478B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		EBA264E91CDC9D7D00B4478B /* Build configuration list for PBXNativeTarget "TWScrollViewControllerTests" */ = {
 			isa = XCConfigurationList;
@@ -524,6 +571,7 @@
 				EBA264EB1CDC9D7D00B4478B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		EBA264EC1CDC9D7D00B4478B /* Build configuration list for PBXNativeTarget "TWScrollViewControllerUITests" */ = {
 			isa = XCConfigurationList;
@@ -532,6 +580,7 @@
 				EBA264EE1CDC9D7D00B4478B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
